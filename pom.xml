@@ -2,12 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <artifactId>shop</artifactId>
-        <groupId>com.sourceworld</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
 
+    <groupId>com.sourceworld</groupId>
     <artifactId>shop-membership-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -23,7 +19,10 @@
         <cola.components.version>4.3.1</cola.components.version>
 
         <spring-boot.version>2.7.3</spring-boot.version>
+        <spring-cloud.version>2021.0.4</spring-cloud.version>
+        <spring-cloud-alibaba.verison>2021.0.4.0</spring-cloud-alibaba.verison>
         <mybatis-starter.version>2.2.2</mybatis-starter.version>
+        <bootstrap.version>3.1.5</bootstrap.version>
     </properties>
 
     <modules>
@@ -32,7 +31,7 @@
         <module>shop-membership-app</module>
         <module>shop-membership-domain</module>
         <module>shop-membership-infrastructure</module>
-        <module>shop-membership-start</module>
+        <module>start</module>
     </modules>
 
     <dependencies>
@@ -46,6 +45,16 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bootstrap -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <version>${bootstrap.version}</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -55,7 +64,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.verison}</version>
+                <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
