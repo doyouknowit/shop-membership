@@ -3,6 +3,7 @@ package com.sourceworld.shop;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.concurrent.TimeUnit;
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @author Frank Zhang
  */
 @SpringBootApplication(scanBasePackages = {"com.sourceworld.shop", "com.alibaba.cola"}, exclude = {DataSourceAutoConfiguration.class})
+@EnableDiscoveryClient
 public class Application {
 
     public static void main(String[] args) throws InterruptedException {
